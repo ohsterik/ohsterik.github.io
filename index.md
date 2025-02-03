@@ -1,7 +1,23 @@
-Hello and welcome to this blog. Edit the `index.md` file to change this content. All pages on the blog, including this one, use [Markdown](https://guides.github.com/features/mastering-markdown/). You can include images:
+# Welcome to my Data Science Blog
 
-![Image of fast.ai logo](images/logo.png)
+In this blog I will be posting about my personal projects and research into the world of Data Science. I hope to demonstrate and build upon my abilities, learn new tools of the trade, and give commentary on my professional development progress.
 
-## This is a title
+### About Me
 
-And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
+I am a recent graduate from Purdue University with a degree in Computer Science with a focus in Data Science. I am passionate about educating others about how machine learning can be applied to the real world and in our everyday lives.
+
+I am proficient in the coding languages:
+- Python
+- R
+- SAS
+- Java
+- SQL
+
+I am proficient with the libraries:
+- Scikit-learn
+- NumPy
+- Matplotlib
+- Pandas
+- Seaborn
+- PyTorch
+- TensorFlow
