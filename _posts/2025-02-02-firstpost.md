@@ -24,20 +24,30 @@ Following the initial exploration, I examined a correlation matrix for the numer
 <img src="/images/correlation_matrix.png" alt="Correlation Matrix" width="400" height="300">
 
 ## Model Selection
+For this project, I opted for XGBoost Regression due to its strong reputation and widespread use in the data science community. Its high performance, efficiency, scalability, and regularization capabilities make it ideal for handling large and complex datasets. Additionally, XGBoost offers robust handling of missing data, extensive community support, and seamless integration with popular Python libraries, ensuring a smooth and reliable modeling process.
+
+## Model Tuning
 The competition focuses on minimizing the Root Mean Squared Error (RMSE) for our model's performance. I began by training the XGBoost model with default parameters, except for n_jobs=-1 and enable_categorical=True. Unfortunately, the initial model's performance was subpar, with an RMSE of 38.88. A scatter plot of the predicted versus actual values revealed that the model's predictions had no significant correlation with the actual labels, tending instead to cluster around the mean.
 
-Insert image here of performance
+<img src="/images/predictions_scatter.png" alt="Predictions and Labels Scatter Plot" width="400" height="300">
 
-Recognizing signs of underfitting, I adjusted the hyperparameters to enhance model fitting and uncover meaningful signals in the data. I selected `'n_estimators': [50, 100, 200]`, `'max_depth': [3, 6, 9]`, and `'learning_rate': [0.1, 0.2]` for my parameter grid with `cv=5`. The grid search identified the optimal hyperparameters as `'learning_rate': 0.2`, `'max_depth': 3`, and `'n_estimators': 200`. However, upon evaluating the tuned model, the RMSE slightly increased to 38.9. To gain further insights, I plotted overlapping histograms comparing the model's predictions to the actual labels.
+Recognizing signs of underfitting, I adjusted the hyperparameters to enhance model fitting and uncover meaningful signals in the data. I selected `'n_estimators': [50, 100, 200]`, `'max_depth': [3, 6, 9]`, and `'learning_rate': [0.1, 0.2]` for my parameter grid with `cv=5`. The grid search identified the optimal hyperparameters as `'learning_rate': 0.2`, `'max_depth': 3`, and `'n_estimators': 200`. However, upon evaluating the tuned model, the RMSE slightly decreased to 38.87. To gain further insights, I plotted overlapping histograms comparing the model's predictions to the actual labels.
 
-Insert histogram here
+<img src="/images/predictions_hist.png" alt="Predictions and Labels Histogram" width="400" height="300">
 
-The histograms indicated that the model's predictions were still centered around the mean, displaying a normal distribution, whereas the actual labels were more uniformly distributed. Additionally, the increased histogram bin count highlighted a significant cluster of backpacks priced at the maximum value, which the model had failed to account for.
+The histograms indicated that the model's predictions were still centered around the mean, displaying a normal distribution, whereas the actual labels were more uniformly distributed. Additionally, the increased histogram bin count highlighted a significant cluster of backpacks priced at the maximum value, which I had failed to account for in my creation of a model.
 
-To compare the pre-tuned model with the tuned one, I examined feature importance. The reduced `max_depth` in the tuned model resulted in fewer features being used. The final model emphasized material, color, weight capacity (kg), and compartments.
+To compare the pre-tuned model with the tuned one, I examined feature importance. The changed `max_depth` in the tuned model resulted in different features being valued. The final model emphasized material, brand, weight capacity (kg), and compartments.
 
-Insert bar graph here
+<img src="/images/features_tuned.png" alt="Tuned Features" width="400" height="300">
 
-In contrast, the original model utilized all available features, with a similar focus on material, color, and compartments, but also included weight capacity (kg).
+In contrast, the original model utilized all available features, with a similar focus.
+
+<img src="/images/features_untuned.png" alt="Untuned Features" width="400" height="300">
 
 ## Conclusion
+Given that my model’s predictions weren't much better than guessing around the mean, I sought guidance from Kaggle discussions. I learned that my model was experiencing “regression to the mean,” leading me to conclude that my features were too weak for my current model.
+
+To address this, I plan to try a simple Multi-Layer Perceptron (MLP) model for regression, aiming to leverage its complexity to capture any subtle signals in the data. Additionally, I'll explore feature engineering techniques, such as creating a price estimate feature using other columns and implementing target encoding, rather than relying on XGBoost's default categorical encoding.
+
+By employing these strategies, I hope to improve my model's predictive power and achieve better performance in the competition.
