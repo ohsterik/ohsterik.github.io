@@ -9,15 +9,25 @@ For the data exploration phase of this project, I decided to start with a smalle
 
 The first step involved loading the data into a pandas DataFrame. Once the data was loaded, I visualized the distributions of all the columns. This involved plotting histograms for numerical variables and bar charts for categorical variables. The visualizations revealed that most columns were evenly distributed across categories for categorical variables and was mostly normally distributed for numeric variables (aside from the Weight Capacity which is multimodal).
 
-<img src="/images/brand_bar.png" alt="Brand Bar Graph" width="300" height="200"> <img src="/images/color_bar.png" alt="Color Bar Graph" width="300" height="200">
+<img src="/images/brand_bar.png" alt="Brand Bar Graph" width="400" height="300"> 
 
-<img src="/images/compartments_hist.png" alt="Compartments Histogram" width="300" height="200"> <img src="/images/laptop_compartment_bar.png" alt="Laptop Compartment Bar Graph" width="300" height="200">
+<img src="/images/color_bar.png" alt="Color Bar Graph" width="400" height="300">
 
-<img src="/images/material_bar.png" alt="Material Bar Graph" width="300" height="200"> <img src="/images/sizes_bar.png" alt="Size Bar Graph" width="300" height="200">
+<img src="/images/compartments_hist.png" alt="Compartments Histogram" width="400" height="300"> 
 
-<img src="/images/style_bar.png" alt="Style Bar Graph" width="300" height="200"> <img src="/images/waterproof_bar.png" alt="Waterproof Bar Graph" width="300" height="200">
+<img src="/images/laptop_compartment_bar.png" alt="Laptop Compartment Bar Graph" width="400" height="300">
 
-<img src="/images/weight_hist.png" alt="Weight Capacity Histogram" width="300" height="200"> <img src="/images/price_hist.png" alt="Price Histogram" width="300" height="200">
+<img src="/images/material_bar.png" alt="Material Bar Graph" width="400" height="300"> 
+
+<img src="/images/sizes_bar.png" alt="Size Bar Graph" width="400" height="300">
+
+<img src="/images/style_bar.png" alt="Style Bar Graph" width="400" height="300"> 
+
+<img src="/images/waterproof_bar.png" alt="Waterproof Bar Graph" width="400" height="300">
+
+<img src="/images/weight_hist.png" alt="Weight Capacity Histogram" width="400" height="300"> 
+
+<img src="/images/price_hist.png" alt="Price Histogram" width="400" height="300">
 
 Following the initial exploration, I examined a correlation matrix for the numerical variables. This matrix helped identify the relationships between the features and the target variable. However, the correlation matrix indicated that there were no particularly strong correlations worth noting between the numeric features and the target variable.
 
